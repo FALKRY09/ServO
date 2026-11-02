@@ -1,0 +1,1 @@
+export function modal(id, title, body){return `<div class="modal fade" id="${id}" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5">${title}</h2></div><div class="modal-body">${body}</div></div></div></div>`}

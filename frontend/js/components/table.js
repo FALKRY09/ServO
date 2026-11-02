@@ -1,0 +1,2 @@
+import {escapeHtml} from '../utils/dom.js';
+export function table(rows, columns){if(!rows?.length)return '<div class="empty-state py-5">Belum ada data.</div>';return `<div class="table-responsive"><table class="table"><thead><tr>${columns.map(c=>`<th>${escapeHtml(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${columns.map(c=>`<td>${escapeHtml(row[c] ?? '—')}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
