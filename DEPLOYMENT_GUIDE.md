@@ -39,6 +39,12 @@ Jangan commit `.env`, token, password, atau database production ke repository.
 
 Serve direktori `frontend/` sebagai static site. Sesuaikan `API_BASE_URL` pada `frontend/js/api/client.js` dengan URL API production dan gunakan HTTPS.
 
+### Vercel
+
+Repository root sudah dikonfigurasi untuk memakai `frontend/` sebagai output static melalui `vercel.json`. Di pengaturan proyek Vercel, gunakan repository root (`.`) sebagai Root Directory dan preset `Other`; jangan override Output Directory menjadi `dist`.
+
+Vercel hanya menayangkan frontend statis pada konfigurasi ini. Deploy backend Laravel di hosting yang mendukung PHP 8.3+ secara terpisah, lalu ubah `API_BASE_URL` di `frontend/js/api/client.js` ke URL API production sebelum deploy frontend. Jangan gunakan alamat localhost untuk API production.
+
 ## Backup
 
 Hentikan atau koordinasikan proses write sebelum menyalin `database.sqlite`. Simpan backup terenkripsi dan uji pemulihan secara berkala. Backup attachment storage juga wajib dilakukan.
